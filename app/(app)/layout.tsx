@@ -11,12 +11,14 @@ import {
   Share2Icon,
   UploadIcon,
   ImageIcon,
+  Eraser,
 } from "lucide-react";
 
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
   { href: "/social-share", icon: Share2Icon, label: "Social Share" },
   { href: "/video-upload", icon: UploadIcon, label: "Video Upload" },
+  { href: "/remove-bg", icon: Eraser, label: "Remove Background" },
 ];
 
 export default function AppLayout({
@@ -61,15 +63,15 @@ export default function AppLayout({
             </div>
             <div className="flex-1">
               <Link href="/" onClick={handleLogoClick}>
-                <div className="btn btn-ghost normal-case text-2xl font-bold tracking-tight cursor-pointer">
-                  Cloudinary Showcase
+                <div className="btn btn-ghost normal-case text-sm md:text-2xl font-bold tracking-tight cursor-pointer">
+                  Aspect mate Showcase
                 </div>
               </Link>
             </div>
-            <div className="flex-none flex items-center space-x-4">
+            <div className="md:flex-none flex items-center md:space-x-4">
               {user && (
                 <>
-                  <div className="avatar">
+                  <div className=" avatar">
                     <div className="w-8 h-8 rounded-full">
                       <img
                         src={user.imageUrl}
@@ -79,12 +81,12 @@ export default function AppLayout({
                       />
                     </div>
                   </div>
-                  <span className="text-sm truncate max-w-xs lg:max-w-md">
+                  <span className="hidden md:block text-sm truncate max-w-xs lg:max-w-md">
                     {user.username || user.emailAddresses[0].emailAddress}
                   </span>
                   <button
                     onClick={handleSignOut}
-                    className="btn btn-ghost btn-circle"
+                    className="hidden md:block btn btn-ghost btn-circle"
                   >
                     <LogOutIcon className="h-6 w-6" />
                   </button>
