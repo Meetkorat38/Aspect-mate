@@ -5,7 +5,9 @@ const isPublicRoute = createRouteMatcher([
     "/sign-in",
     "/sign-up",
     "/",
-    "/home"
+    "/home",
+    "/remove-bg",
+    "/social-share"
 ])
 const isPublicApiRoute = createRouteMatcher([
     "/api/videos"
